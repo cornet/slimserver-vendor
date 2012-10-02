@@ -17,7 +17,7 @@
 #   Under 10.7, builds for x86_64 Perl 5.12.3 (Lion does not support 32-bit CPUs)
 #   Under 10.9, builds for x86_64 Perl 5.16
 # FreeBSD 7.2 (Perl 5.8.9)
-# FreeBSD 8.2 (Perl 5.12.4)
+# FreeBSD 8.X,9.X (Perl 5.12.4)
 #
 # Perl 5.12.4/5.14.1 note:
 #   You should build 5.12.4 using perlbrew and the following command. GCC's stack protector must be disabled
@@ -1601,6 +1601,10 @@ function build_ffmpeg {
     # XXX test --arch options on Linux
     if [ $ARCH = "x86_64-linux-thread-multi" ]; then
         FFOPTS="$FFOPTS --disable-mmx"
+    fi
+    # FreeBSD amd64 needs arch option
+    if [ $ARCH = "amd64-freebsd" ]; then
+	FFOPTS="$FFOPTS --arch=x64"
     fi
     
     if [ $OS = "Darwin" ]; then
