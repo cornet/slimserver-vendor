@@ -1603,7 +1603,7 @@ function build_ffmpeg {
         FFOPTS="$FFOPTS --disable-mmx"
     fi
     # FreeBSD amd64 needs arch option
-    if [ $ARCH = "amd64-freebsd" ]; then
+    if [[ $ARCH = amd64-freebsd* ]]; then
 	FFOPTS="$FFOPTS --arch=x64"
     fi
     
