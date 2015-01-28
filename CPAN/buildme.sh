@@ -45,7 +45,7 @@ else
     exit
 fi
 
-if [ ! -x /usr/bin/rsync ]; then
+if [ ! -x `which rsync` ]; then
     echo "This script requires /usr/bin/rsync, please install it."
     exit
 fi
