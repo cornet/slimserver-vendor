@@ -163,6 +163,10 @@ if [ -x "/usr/bin/perl5.16" ]; then
     PERL_516=/usr/bin/perl5.16
 elif [ -x "/usr/bin/perl5.16.3" ]; then
     PERL_516=/usr/bin/perl5.16.3
+elif [ -x "/usr/local/bin/perl5.16" ]; then
+    PERL_516=/usr/local/bin/perl5.16
+elif [ -x "/usr/local/bin/perl5.16.3" ]; then
+    PERL_516=/usr/local/bin/perl5.16.3
 fi
 
 if [ $PERL_516 ]; then
